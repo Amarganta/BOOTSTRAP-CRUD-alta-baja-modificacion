@@ -76,7 +76,7 @@
                     <div class="modal-body">
                         <div class="form-group">
                             <label>Name</label>
-                            <input id="add-name" type="text" class="form-control" required="">
+                            <input id="add-name" type="text" maxlength="50" class="form-control" required="">
                         </div>
                         <div class="form-group">
                             <label>Email</label>
@@ -84,11 +84,11 @@
                         </div>
                         <div class="form-group">
                             <label>Address</label>
-                            <textarea id="add-address" class="form-control" required=""></textarea>
+                            <textarea id="add-address" maxlength="60" class="form-control" required=""></textarea>
                         </div>
                         <div class="form-group">
                             <label>Phone</label>
-                            <input id="add-phone" type="text" class="form-control" onkeydown="validateNumber(event);"
+                            <input id="add-phone" type="text" class="form-control"
                                 required="">
                         </div>
                     </div>

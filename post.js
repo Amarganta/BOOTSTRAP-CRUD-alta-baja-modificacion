@@ -47,18 +47,23 @@ const crearObjeto = () => {
 
 const registrarUsuario = (e) => {
     e.preventDefault();
-    fetch(url, {
-        method,
-        headers: {
-            'Content-Type': 'Application/json'
-        },
-        body: JSON.stringify(crearObjeto())
-    })
-    .then(response => {
-        console.log(response);
-        return response.json()
-    })
-    .then(data => console.log(data))
-    .catch(error => console.log(error))
+    if (validateAddress() && validateEmail() && validateName() && validateNumber() ) {
+        fetch(url, {
+            method,
+            headers: {
+                'Content-Type': 'Application/json'
+            },
+            body: JSON.stringify(crearObjeto())
+        })
+        .then(data => {
+            console.log(data)
+            $("#addEmployeeModal").modal('hide')
+            document.querySelector('#addEmployeeModal form').reset()
+        })
+        .catch(error => console.log(error))
+    } else {
+        alert("No es posible completar registro, verifique los datos ingresados")
+    }
+    
 }
 formulario.addEventListener('submit', registrarUsuario);
