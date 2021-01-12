@@ -60,6 +60,7 @@ const registrarUsuario = (e) => {
             $("#addEmployeeModal").modal('hide')
             document.querySelector('#addEmployeeModal form').reset()
         })
+        .then(() => createTable())
         .catch(error => console.log(error))
     } else {
         alert("No es posible completar registro, verifique los datos ingresados")
