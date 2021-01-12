@@ -38,23 +38,38 @@ const createTable = () => {
                 botonEliminar.className = 'btn btn-danger';
                 botonEliminar.innerHTML = `<i class="fa fa-trash" aria-hidden="true"></i>`;
                 const td = document.createElement('td');
-                botonEliminar.addEventListener('click', () => deleteUser(prop))
-
+                botonEliminar.setAttribute('data-toggle', 'modal');
+                botonEliminar.setAttribute('data-target', '#deleteEmployeeModal')
+                botonEliminar.addEventListener('click', () => deleteUser(prop));
+                
+        
                 td.appendChild(botonEliminar);
                 tr.appendChild(td);
                 tbody.appendChild(tr);
 
             }
         })
+        // 
         .catch((error => console.log(error)))
 
 }
 const deleteUser = (id) => {
     fetch(`${urlBase}/users/${id}.json`, {
         method: 'DELETE',
-    }).then(() => createTable())
+    })
+    .then((data) => {
+        console.log(data)
+        $("#deleteEmployeeMododal").modal('hide')
+            document.querySelector('#deleteEmployeeMododal').reset()
+    })
+    .then(() => createTable())
 
     console.log('Eliminar' + id)
+}
+
+const modalEliminar = () => {
+    // const deleteModal = document.querySelectorAll('#editEmployeeModal'));
+    // return deleteModal;
 }
 const validateName = () => {
     let name = document.getElementById("add-name").value
