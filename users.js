@@ -67,10 +67,7 @@ const deleteUser = (id) => {
     console.log('Eliminar' + id)
 }
 
-const modalEliminar = () => {
-    // const deleteModal = document.querySelectorAll('#editEmployeeModal'));
-    // return deleteModal;
-}
+
 const validateName = () => {
     let name = document.getElementById("add-name").value
     return name.length <= 50

@@ -13,6 +13,8 @@ const params = new URLSearchParams(window.location.search)
 // }
 // si id null quiere decir que un POST
 // sino tengo que hacer un Patch
+
+//  con esto editaremos los empleados
 const id = params.get('name');
 
 const mostrarInfo = (data) => {
