@@ -98,13 +98,11 @@ const editUser = (e) => {
       "Content-Type": "Application/json",
     },
     body: JSON.stringify(modificarObjeto()),
-  })
-    .then((response) => {
-      return response.json();
-    })
-    .then((data) => {
-      console.log(data);
-    });
+  }).then((data) => {
+    console.log(data);
+    $("#editEmployeeMododal").modal("hide");
+    document.querySelector("#editEmployeeMododal").reset();
+  });
 };
 
 const formInfo = (id) => {
@@ -120,13 +118,7 @@ const formInfo = (id) => {
       editEmail.value = data.email;
       editAddress.value = data.address;
       editPhone.value = data.phone;
-    })
-    .then((data) => {
-      console.log(data);
-      $("#editEmployeeMododal").modal("hide");
-      document.querySelector("#editEmployeeMododal").reset();
-    })
-    .then(() => createTable());
+    });
 };
 
 const validateName = () => {
