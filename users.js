@@ -98,11 +98,13 @@ const editUser = (e) => {
       "Content-Type": "Application/json",
     },
     body: JSON.stringify(modificarObjeto()),
-  }).then((data) => {
-    console.log(data);
-    $("#editEmployeeMododal").modal("hide");
-    document.querySelector("#editEmployeeMododal").reset();
-  });
+  })
+    .then((data) => {
+      console.log(data);
+      $("#editEmployeeModal").modal("hide");
+      document.querySelector("#editEmployeeModal");
+    })
+    .then(() => createTable());
 };
 
 const formInfo = (id) => {

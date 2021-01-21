@@ -2,6 +2,7 @@
 
 const btn = document.getElementById("add-btn");
 const formulario = document.getElementById("form-add-user");
+const edicion = document.getElementById("form-edit-user");
 const addName = document.getElementById("add-name");
 const addEmail = document.getElementById("add-email");
 const addAddress = document.getElementById("add-address");
@@ -75,3 +76,5 @@ const registrarUsuario = (e) => {
 };
 
 formulario.addEventListener("submit", registrarUsuario);
+
+edicion.addEventListener("submit", editUser);
